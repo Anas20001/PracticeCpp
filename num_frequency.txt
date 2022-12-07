@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+ 
+int main() {
+
+  int n, num[200];
+
+  int frq[150+1] = {0};
+
+  cin>>n;
+
+  for(int i=0; i<n; i++){
+
+    cin>> num[i];
+    
+    frq[num[i]]++;
+  }
+
+  int max_pos = -1; 
+
+  for(int i=0; i<151; ++i){
+
+    if(max_pos == -1 || frq[max_pos] < frq[i]){
+      max_pos = i;
+    }
+  }
+
+  cout<<max_pos<< " repeated "<< frq[max_pos]<<" times";
+
+
+  
+	return 0;
+}

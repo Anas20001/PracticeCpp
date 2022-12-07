@@ -1,0 +1,64 @@
+
+#include<iostream>
+using namespace std;
+ 
+int main() {
+
+  int n, tmp, mn[3];
+
+  cin>>n;
+
+  for(int i = 0; i< n; i++){
+
+    int val; 
+
+    cin>> val;
+
+    if(i<3){
+      mn[i] = val;
+      
+    }
+    else{
+      int mx_pos = 0;
+
+      for(int j=1; j<3; ++j){
+
+        if(mn[mx_pos] < mn[j])
+          mx_pos = j;
+      }
+
+      if(val < mn[mx_pos])
+        mn[mx_pos] = val;
+    }
+  }
+
+  int mx_pos = 0;
+
+  for(int j=1; j<3; ++j){
+
+    if (mn[mx_pos] < mn[j])
+      mx_pos = j;
+  }
+
+  tmp = mn[2];
+
+  mn[2] = m[mx_pos];
+
+  mn[mx_pos] = tmp;
+
+  if(mn[0]> mn[1]){
+    tmp = mn[0];
+    mn[0] = tmp;
+
+    mn[1] = tmp;
+  }
+
+
+  for(int i =0; i<3; i++){
+    cout<<mn[i]<< " ";
+  }
+  
+
+  
+	return 0;
+}
