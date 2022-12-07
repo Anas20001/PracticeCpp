@@ -3,18 +3,7 @@
 using namespace std; 
 
 
-int rec(int arr[], int len){
-
-  if(len == 1)
-    return arr[0];
-
-  int sub = rec(arr, len -1);
-
-  sub = sub * (len-1);
-
-  return (sub +  arr[len -1])/len;
-  
-}
+void 
 
 int main() {
 
